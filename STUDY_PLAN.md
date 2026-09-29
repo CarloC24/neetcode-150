@@ -19,7 +19,7 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 | Sliding Window | 1 | 6 |
 | Stack | 1 | 7 |
 | Binary Search | 1 | 7 |
-| Linked List | 1 | 11 |
+| Linked List | 2 | 11 |
 | Trees | 0 | 15 |
 | Heap / Priority Queue | 0 | 7 |
 | Backtracking | 0 | 9 |
@@ -32,7 +32,7 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 | Intervals | 0 | 6 |
 | Math & Geometry | 0 | 8 |
 | Bit Manipulation | 0 | 7 |
-| **Total** | **8** | **150** |
+| **Total** | **9** | **150** |
 
 Extra practice already done (not in the NeetCode 150): Length of Last Word, Score of a String, Time Needed to Buy Tickets.
 
@@ -42,7 +42,7 @@ Extra practice already done (not in the NeetCode 150): Length of Last Word, Scor
 
 These build directly on problems you've already solved. Each one also appears in its category below.
 
-1. [ ] Merge Two Sorted Lists (E) — Linked List
+1. [x] Merge Two Sorted Lists (E) — Linked List
 2. [ ] Group Anagrams (M) — Arrays & Hashing
 3. [ ] Top K Frequent Elements (M) — Arrays & Hashing
 4. [ ] Product of Array Except Self (M) — Arrays & Hashing
@@ -101,7 +101,7 @@ These build directly on problems you've already solved. Each one also appears in
 
 ### Linked List
 - [x] Reverse Linked List (E)
-- [ ] Merge Two Sorted Lists (E)
+- [x] Merge Two Sorted Lists (E)
 - [ ] Linked List Cycle (E)
 - [ ] Reorder List (M)
 - [ ] Remove Nth Node From End of List (M)
