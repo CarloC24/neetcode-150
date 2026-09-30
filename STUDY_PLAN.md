@@ -9,6 +9,7 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 - Within a category, do problems top to bottom (easiest first).
 - If you're stuck for more than 30–45 minutes, watch the NeetCode explanation, then re-solve it from scratch the next day.
 - Revisit old problems every couple of weeks to keep the patterns fresh.
+- For videos to listen to alongside this plan, see [VIDEOS.md](VIDEOS.md).
 
 ## Progress
 
