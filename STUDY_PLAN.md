@@ -36,6 +36,52 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 
 Extra practice already done (not in the NeetCode 150): Length of Last Word, Score of a String, Time Needed to Buy Tickets.
 
+## Daily Time Budget
+
+Spend each day on **one category**, the one you're currently working through, and don't move on until it's done.
+
+**Per-problem estimates** (includes solving it and writing both the Python and Java versions):
+- Easy: ~30 min
+- Medium: ~50 min
+- Hard: ~80 min
+
+Easy categories get shorter sessions. Harder ones get longer sessions, since a single problem there can take an hour or more.
+
+| Phase | Category | Left (E / M / H) | Est. total | Minutes / day | ≈ Days |
+|---|---|---|---|---|---|
+| 1–2 | Arrays & Hashing | 0 / 6 / 0 | 5h 00m | 45 | 7 |
+| 2 | Two Pointers | 0 / 3 / 1 | 3h 50m | 45 | 6 |
+| 2 | Sliding Window | 0 / 3 / 2 | 5h 10m | 45 | 7 |
+| 2 | Stack | 0 / 5 / 1 | 5h 30m | 45 | 8 |
+| 2 | Binary Search | 0 / 5 / 1 | 5h 30m | 45 | 8 |
+| 2 | Linked List | 1 / 6 / 2 | 8h 10m | 45 | 11 |
+| 3 | Trees | 6 / 7 / 2 | 11h 30m | 60 | 12 |
+| 3 | Heap / Priority Queue | 2 / 4 / 1 | 5h 40m | 60 | 6 |
+| 3 | Backtracking | 0 / 8 / 1 | 8h 00m | 60 | 8 |
+| 3 | Tries | 0 / 2 / 1 | 3h 00m | 60 | 3 |
+| 4 | Graphs | 0 / 12 / 1 | 11h 20m | 75 | 10 |
+| 4 | Advanced Graphs | 0 / 3 / 3 | 6h 30m | 90 | 5 |
+| 5 | 1-D Dynamic Programming | 2 / 10 / 0 | 9h 20m | 75 | 8 |
+| 5 | 2-D Dynamic Programming | 0 / 7 / 4 | 11h 10m | 90 | 8 |
+| 6 | Greedy | 0 / 8 / 0 | 6h 40m | 60 | 7 |
+| 6 | Intervals | 1 / 4 / 1 | 5h 10m | 60 | 6 |
+| 6 | Math & Geometry | 2 / 6 / 0 | 6h 00m | 45 | 8 |
+| 6 | Bit Manipulation | 5 / 2 / 0 | 4h 10m | 45 | 6 |
+| | **Total** | **19 / 101 / 21** | **~122h** | | **~134 days** |
+
+**Add 10–15 minutes of review every day** on top of the category time. Re-solve one problem you've already finished, from a blank file and without looking at your old solution. Pick one from an earlier category, so the old patterns stay fresh while you learn new ones.
+
+**What a typical day looks like:**
+- Phase 2 day, about 1 hour: 45 min on new problems, then 15 min of review.
+- Graphs or DP day, about 1h 30m to 1h 45m: 75–90 min on new problems, then 15 min of review.
+
+**Pace:** at 6 days a week, the remaining 141 problems take about **22–23 weeks**. If you can only do 4 days a week, plan on about 8 months.
+
+**Adjusting as you go:**
+- If a problem runs well past its estimate, stop at the daily time limit and pick it back up tomorrow. Don't turn one day into three hours.
+- If you finish a day's problem early, spend the leftover time reading the NeetCode explanation for an approach you didn't use, rather than starting the next problem cold.
+- Update the "Left" column when you finish a category so the estimates stay accurate.
+
 ---
 
 ## Phase 1 — Up next (go deeper into the basics)
