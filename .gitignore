@@ -1,0 +1,9 @@
+# Compiled Java (from javac)
+*.class
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
