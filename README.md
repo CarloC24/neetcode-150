@@ -67,6 +67,20 @@ PASS  input left unmodified: [3, 2, 4]
 
 Each problem's README lists its exact commands and expected output.
 
+### Running everything
+
+`example.sh` runs every solution in both languages and prints a summary:
+
+```bash
+./example.sh                # all problems, Python and Java (~10 seconds)
+./example.sh two-sum        # only folders whose name contains "two-sum"
+./example.sh -p             # Python only (much faster)
+./example.sh -j linked      # Java only, matching folders
+./example.sh -v             # also show each file's own PASS lines
+```
+
+A file fails if it crashes, throws an exception, doesn't compile, or prints any line starting with `FAIL`. The script exits with status 1 if anything failed, so you can run it before committing.
+
 **Verified with:** Python 3.9.6 and JDK 26.
 
 ## Adding a new problem
@@ -95,7 +109,7 @@ Each problem's README lists its exact commands and expected output.
    - run instructions and the expected output
    - notes on anything surprising
 
-4. **Run both files** and confirm every line prints `PASS`.
+4. **Run `./example.sh problem-name`** and confirm both files pass. Then run `./example.sh` on its own, so you know nothing else broke.
 
 5. **Update the docs:**
    - Check the problem off in `STUDY_PLAN.md`, and bump the counts in its Progress table.
