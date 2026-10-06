@@ -50,7 +50,7 @@ for i, x in enumerate(nums):
 
 ## 2. Two pointers: close in from both ends
 
-**Solved:** [Valid Palindrome](valid-palindrome/)
+**Solved:** [Valid Palindrome](valid-palindrome/), [Is Subsequence](is-subsequence/) (extra practice)
 
 **When to use it:** the input is sorted, or you're comparing symmetric positions (palindromes, reversing in place). Each step lets you rule out one end of the range.
 
@@ -71,6 +71,16 @@ return True
 **Common bugs:**
 - Using `<=` instead of `<`. It compares the middle element with itself, which is harmless here but wrong in pair-sum problems.
 - Skipping characters with an inner `while` loop that doesn't also check `l < r`.
+
+**Same-direction variant** ([Is Subsequence](is-subsequence/)): one pointer per sequence, both moving forward. The "fast" pointer moves every step, and the other moves only on a match.
+
+```python
+i = 0
+for c in t:                      # j is implicit: walk t once
+    if i < len(s) and s[i] == c:
+        i += 1                   # earliest match is always safe
+return i == len(s)
+```
 
 **Next up:** Two Sum II and 3Sum. 3Sum is "sort, then run two pointers for each element."
 

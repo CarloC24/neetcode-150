@@ -40,6 +40,7 @@ Every problem has its own folder with:
 | 58 | [Length of Last Word](length-of-last-word/) | Easy | Backward scan | O(n) | O(1) |
 | 3110 | [Score of a String](score-of-a-string/) | Easy | Single pass | O(n) | O(1) |
 | 2073 | [Time Needed to Buy Tickets](time-needed-to-buy-tickets/) | Easy | Direct calculation | O(n) | O(1) |
+| 392 | [Is Subsequence](is-subsequence/) | Easy | Two pointers, same direction | O(n+m) | O(1) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 
