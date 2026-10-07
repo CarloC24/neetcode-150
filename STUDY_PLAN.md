@@ -36,7 +36,7 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 | Bit Manipulation | 0 | 7 |
 | **Total** | **9** | **150** |
 
-Extra practice already done (not in the NeetCode 150): Length of Last Word, Score of a String, Time Needed to Buy Tickets, Is Subsequence.
+Extra practice already done (not in the NeetCode 150): Length of Last Word, Score of a String, Time Needed to Buy Tickets, Is Subsequence, Isomorphic Strings.
 
 ## Daily Time Budget
 

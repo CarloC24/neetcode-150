@@ -28,7 +28,7 @@ The input size tells you roughly how fast the solution has to be. A judge handle
 
 ## 1. Hash set / hash map: "have I seen this before?"
 
-**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/)
+**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/) (extra practice)
 
 **When to use it:** you need to check for duplicates, find a pair that adds up to a target, count things, or match two collections against each other. It trades O(n) memory for O(1) lookups, which turns an O(n²) nested loop into O(n).
 
@@ -42,8 +42,11 @@ for i, x in enumerate(nums):
 
 **Counting variant:** if the keys are only 26 lowercase letters, use a fixed `[0] * 26` array instead of a dict. It's O(1) space, and checking for "all zeros" compares the counts in one step.
 
+**Bijection variant** ([Isomorphic Strings](isomorphic-strings/)): to check that two sequences map one-to-one, check **both** directions. A single `s -> t` map accepts `"ab" -> "aa"`. For ASCII, two `[0] * 128` arrays of "last seen at position + 1" do both checks in one comparison.
+
 **Common bugs:**
 - Inserting before looking up, so an element pairs with itself (in Two Sum, `[3]` with target 6).
+- Checking a mapping in only one direction when it must be one-to-one.
 - Forgetting the quick length check when comparing two strings.
 
 ---
