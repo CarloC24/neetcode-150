@@ -123,7 +123,7 @@ for r in range(len(s)):
 
 ## 4. Stack: most recent unmatched thing
 
-**Solved:** [Valid Parentheses](valid-parentheses/)
+**Solved:** [Valid Parentheses](valid-parentheses/), [Next Greater Element I](next-greater-element-i/) (extra practice)
 
 **When to use it:** the problem involves nesting, matching pairs, undo, or "the most recent thing that hasn't been resolved yet." Anything last-in-first-out.
 
@@ -144,7 +144,21 @@ return not stack            # leftover openers mean it's unbalanced
 - Returning `True` at the end without checking that the stack is empty, so `"(("` passes.
 - In Java, using `java.util.Stack` instead of `ArrayDeque`. `Stack` works but synchronizes every method for no benefit.
 
-**Next up:** Min Stack, and the monotonic stack (Daily Temperatures).
+**Monotonic stack variant** ([Next Greater Element I](next-greater-element-i/)): for "the next larger value to the right", keep a stack of values still waiting for an answer. It stays decreasing from bottom to top. Each new value pops and answers everything smaller than it. Every value is pushed and popped at most once, so it's O(n) overall despite the nested loop.
+
+```python
+answer = {}
+stack = []                       # waiting values, decreasing bottom to top
+for x in nums:
+    while stack and stack[-1] < x:
+        answer[stack.pop()] = x  # x is the first larger value after it
+    stack.append(x)
+# anything left on the stack has no larger value: -1
+```
+
+For "next smaller", flip the comparison. To answer by position instead of value (Daily Temperatures), push indices.
+
+**Next up:** Min Stack, and Daily Temperatures (the same monotonic stack, storing indices).
 
 ---
 
