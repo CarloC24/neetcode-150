@@ -42,6 +42,7 @@ Every problem has its own folder with:
 | 2073 | [Time Needed to Buy Tickets](time-needed-to-buy-tickets/) | Easy | Direct calculation | O(n) | O(1) |
 | 392 | [Is Subsequence](is-subsequence/) | Easy | Two pointers, same direction | O(n+m) | O(1) |
 | 205 | [Isomorphic Strings](isomorphic-strings/) | Easy | Last-seen index arrays | O(n) | O(1) |
+| 605 | [Can Place Flowers](can-place-flowers/) | Easy | Greedy, skip ahead | O(n) | O(1) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 

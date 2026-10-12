@@ -224,6 +224,33 @@ return False
 
 ---
 
+## 7. Greedy: take the best local choice, and prove it's safe
+
+**Solved:** [Can Place Flowers](can-place-flowers/) (extra practice)
+
+**When to use it:** you're placing, picking or scheduling items one at a time, and taking the earliest (or largest, or cheapest) option never blocks a better answer later. The work is in convincing yourself of that, usually by an exchange argument: take any best answer, swap its first choice for the greedy one, and show it stays valid.
+
+```python
+i = 0
+while i < len(bed) and n > 0:
+    if bed[i] == 1:
+        i += 2                       # next plot touches this flower
+    elif i + 1 < len(bed) and bed[i + 1] == 1:
+        i += 3                       # this plot touches the next flower
+    else:
+        n -= 1                       # plant at the leftmost free plot
+        i += 2                       # skipping ahead replaces writing it down
+return n <= 0
+```
+
+**Common bugs:**
+- Using greedy without checking that it's safe. It often isn't (coin change with arbitrary coins), and then the problem needs DP.
+- Python's `//` rounds down, not toward zero: `(0 - 1) // 2` is `-1`, while Java's `(0 - 1) / 2` is `0`. Formulas that count capacity can go negative at the edges.
+
+**Next up:** the Greedy category in the plan (Maximum Subarray, Jump Game).
+
+---
+
 ## Before you submit
 
 - [ ] Empty input, a single element, all elements the same
