@@ -91,7 +91,7 @@ return i == len(s)
 
 ## 3. One pass / sliding window: track the best so far
 
-**Solved:** [Best Time to Buy and Sell Stock](best-time-to-buy-and-sell-stock/)
+**Solved:** [Best Time to Buy and Sell Stock](best-time-to-buy-and-sell-stock/), [Longest Strictly Increasing or Strictly Decreasing Subarray](longest-strictly-increasing-or-strictly-decreasing-subarray/) (extra practice)
 
 **When to use it:** you're looking for the best contiguous subarray or substring, or the best pair `(i < j)`. Instead of checking every pair, carry what you need from the left side as you go.
 
@@ -101,6 +101,20 @@ for price in prices:
     lowest = min(lowest, price)          # best "left side" so far
     best = max(best, price - lowest)     # best answer ending here
 return best
+```
+
+**Run-length variant** ([Longest Strictly Increasing or Strictly Decreasing Subarray](longest-strictly-increasing-or-strictly-decreasing-subarray/)): for "the longest contiguous run with property X", keep the length of the run ending at the current element. Extend it while the property holds, and reset it when it breaks.
+
+```python
+inc = dec = best = 1
+for i in range(1, len(nums)):
+    if nums[i] > nums[i - 1]:
+        inc, dec = inc + 1, 1
+    elif nums[i] < nums[i - 1]:
+        inc, dec = 1, dec + 1
+    else:
+        inc = dec = 1                    # equal pair breaks both
+    best = max(best, inc, dec)
 ```
 
 **Variable-size window**, for the next problems in this category:

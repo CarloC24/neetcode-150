@@ -44,6 +44,7 @@ Every problem has its own folder with:
 | 205 | [Isomorphic Strings](isomorphic-strings/) | Easy | Last-seen index arrays | O(n) | O(1) |
 | 605 | [Can Place Flowers](can-place-flowers/) | Easy | Greedy, skip ahead | O(n) | O(1) |
 | 496 | [Next Greater Element I](next-greater-element-i/) | Easy | Monotonic stack, queries only | O(m+n) | O(m) |
+| 3105 | [Longest Strictly Increasing or Strictly Decreasing Subarray](longest-strictly-increasing-or-strictly-decreasing-subarray/) | Easy | Two run counters | O(n) | O(1) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 
