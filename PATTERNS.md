@@ -101,7 +101,7 @@ return i == len(s)
 
 ## 3. One pass / sliding window: track the best so far
 
-**Solved:** [Best Time to Buy and Sell Stock](best-time-to-buy-and-sell-stock/), [Longest Strictly Increasing or Strictly Decreasing Subarray](longest-strictly-increasing-or-strictly-decreasing-subarray/) (extra practice)
+**Solved:** [Best Time to Buy and Sell Stock](best-time-to-buy-and-sell-stock/), [Longest Strictly Increasing or Strictly Decreasing Subarray](longest-strictly-increasing-or-strictly-decreasing-subarray/), [Monotonic Array](monotonic-array/) (extra practice)
 
 **When to use it:** you're looking for the best contiguous subarray or substring, or the best pair `(i < j)`. Instead of checking every pair, carry what you need from the left side as you go.
 
@@ -142,6 +142,7 @@ for r in range(len(s)):
 **Common bugs:**
 - Answering `max(prices) - min(prices)`, which ignores order. On `[7, 1, 5, 3, 6, 4]` it happens to work, but on `[7, 6, 4, 3, 1]` it returns 6 instead of 0, because you can't sell before you buy.
 - Off-by-one errors in the window length: it's `r - l + 1`.
+- Mixing up strict and non-strict order. In [Monotonic Array](monotonic-array/), equal neighbours are allowed (`<=`). In the strictly increasing subarray problem, they break the run (`<`). Check which one the problem says.
 
 ---
 
