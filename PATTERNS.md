@@ -28,7 +28,7 @@ The input size tells you roughly how fast the solution has to be. A judge handle
 
 ## 1. Hash set / hash map: "have I seen this before?"
 
-**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/), [Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/) (extra practice)
+**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/), [Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/), [Divide Array Into Equal Pairs](divide-array-into-equal-pairs/) (extra practice)
 
 **When to use it:** you need to check for duplicates, find a pair that adds up to a target, count things, or match two collections against each other. It trades O(n) memory for O(1) lookups, which turns an O(n²) nested loop into O(n).
 
@@ -40,7 +40,7 @@ for i, x in enumerate(nums):
     seen[x] = i                 # ...so x can't pair with itself
 ```
 
-**Counting variant:** if the keys are only 26 lowercase letters, use a fixed `[0] * 26` array instead of a dict. It's O(1) space, and checking for "all zeros" compares the counts in one step.
+**Counting variant:** if the keys are only 26 lowercase letters, use a fixed `[0] * 26` array instead of a dict. It's O(1) space, and checking for "all zeros" compares the counts in one step. The same works for any small value range (values `1..500` fit in `[False] * 501`). If you only need to know whether each count is even, store the parity: toggle a flag, or add and remove from a set.
 
 **In-place variant** ([Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/)): when the values are exactly `1..n`, the array can be its own lookup table, because value `v` has a home at index `v - 1`. Mark "seen `v`" by making `nums[v - 1]` negative. That's O(1) space instead of a set.
 
@@ -56,6 +56,7 @@ missing = [i + 1 for i, x in enumerate(nums) if x > 0]
 **Common bugs:**
 - Inserting before looking up, so an element pairs with itself (in Two Sum, `[3]` with target 6).
 - Checking a mapping in only one direction when it must be one-to-one.
+- Using "XOR everything and check for 0" to test that every count is even. Unrelated values can cancel: `1 ^ 2 ^ 4 ^ 7 == 0`. XOR only works when the counts are already known, as in Single Number.
 - In Python, swapping with `nums[i], nums[nums[i] - 1] = ...`. The targets are assigned left to right, so the second index is computed from the new `nums[i]`. Save `j = nums[i] - 1` first.
 - Forgetting the quick length check when comparing two strings.
 
