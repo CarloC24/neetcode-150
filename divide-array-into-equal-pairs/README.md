@@ -152,8 +152,9 @@ rm divide-array-into-equal-pairs/java/DivideArrayIntoEqualPairs*.class
   check, because an odd-length run would leave its last element paired with the
   first element of the next run.
 - **Two odd counts don't make an even one.** `[1, 1, 1, 2]` has an even
-  length and an even *total*, but `1` appears three times and `2` once. Both are
-  left over. That case is in the test set.
+  length, but `1` appears three times and `2` once, so one copy of each is left
+  over. Checking only that the length is even isn't enough. That case is in the
+  test set.
 - **The harness copies each input**, because approach 1 sorts in place. A final
   check runs the other three on one shared array to confirm they leave it
   unchanged.
