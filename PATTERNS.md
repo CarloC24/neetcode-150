@@ -28,7 +28,7 @@ The input size tells you roughly how fast the solution has to be. A judge handle
 
 ## 1. Hash set / hash map: "have I seen this before?"
 
-**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/), [Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/), [Divide Array Into Equal Pairs](divide-array-into-equal-pairs/) (extra practice)
+**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/), [Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/), [Divide Array Into Equal Pairs](divide-array-into-equal-pairs/), [Majority Element](majority-element/) (extra practice)
 
 **When to use it:** you need to check for duplicates, find a pair that adds up to a target, count things, or match two collections against each other. It trades O(n) memory for O(1) lookups, which turns an O(n²) nested loop into O(n).
 
@@ -51,6 +51,17 @@ for x in nums:
 missing = [i + 1 for i, x in enumerate(nums) if x > 0]
 ```
 
+**Voting variant** ([Majority Element](majority-element/)): if you only need the value that appears more than half the time, you don't need the counts at all. Boyer-Moore keeps one candidate and a count, and cancels it against each different value. The majority outnumbers everything else, so it survives. That's O(1) space instead of a map.
+
+```python
+res = count = 0
+for x in nums:
+    if count == 0:
+        res = x                     # nothing left to cancel: new candidate
+    count += 1 if x == res else -1
+return res                          # only correct if a majority is guaranteed
+```
+
 **Bijection variant** ([Isomorphic Strings](isomorphic-strings/)): to check that two sequences map one-to-one, check **both** directions. A single `s -> t` map accepts `"ab" -> "aa"`. For ASCII, two `[0] * 128` arrays of "last seen at position + 1" do both checks in one comparison.
 
 **Common bugs:**
@@ -58,6 +69,7 @@ missing = [i + 1 for i, x in enumerate(nums) if x > 0]
 - Checking a mapping in only one direction when it must be one-to-one.
 - Using "XOR everything and check for 0" to test that every count is even. Unrelated values can cancel: `1 ^ 2 ^ 4 ^ 7 == 0`. XOR only works when the counts are already known, as in Single Number.
 - In Python, swapping with `nums[i], nums[nums[i] - 1] = ...`. The targets are assigned left to right, so the second index is computed from the new `nums[i]`. Save `j = nums[i] - 1` first.
+- Trusting Boyer-Moore without the majority guarantee. `[1, 2, 3]` returns `3`. If the problem doesn't promise a majority, count the candidate in a second pass.
 - Forgetting the quick length check when comparing two strings.
 
 ---

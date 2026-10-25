@@ -49,6 +49,7 @@ Every problem has its own folder with:
 | 896 | [Monotonic Array](monotonic-array/) | Easy | First vs last, one pass | O(n) | O(1) |
 | 2206 | [Divide Array Into Equal Pairs](divide-array-into-equal-pairs/) | Easy | Parity array | O(n) | O(1) |
 | 2678 | [Number of Senior Citizens](number-of-senior-citizens/) | Easy | Fixed-position digits | O(n) | O(1) |
+| 169 | [Majority Element](majority-element/) | Easy | Boyer-Moore voting | O(n) | O(1) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 
