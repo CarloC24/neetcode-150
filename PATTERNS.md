@@ -303,6 +303,39 @@ return n <= 0
 
 ---
 
+## 8. Prefix sums: range sums in O(1)
+
+**Solved:** [Find Pivot Index](find-pivot-index/) (extra practice)
+
+**When to use it:** you need the sum of a range, or of everything before or after an index, many times over. Precompute running totals once, and any range sum becomes a subtraction instead of a loop.
+
+```python
+prefix = [0] * (len(nums) + 1)       # prefix[i] = sum(nums[:i]); prefix[0] = 0 is the empty sum
+for i, x in enumerate(nums):
+    prefix[i + 1] = prefix[i] + x
+range_sum = prefix[r + 1] - prefix[l] # sum(nums[l : r + 1])
+```
+
+**Running variant:** if you only ever look at the sum before the current index, one variable replaces the array. For "left vs right" questions, the right side is `total - left - nums[i]`.
+
+```python
+total, left = sum(nums), 0
+for i, x in enumerate(nums):
+    if left == total - left - x:     # compare first...
+        return i
+    left += x                        # ...then move x to the left side
+return -1
+```
+
+**Common bugs:**
+- Adding `nums[i]` to the running sum before using it, which puts an element on its own left side.
+- Dropping the leading 0 from the prefix array, so index 0 needs a special case and every range is off by one.
+- Stopping early because one side "has passed" the other. With negative values, neither sum is monotone.
+
+**Next up:** Product of Array Except Self in the plan, the same left/right idea with products instead of sums.
+
+---
+
 ## Before you submit
 
 - [ ] Empty input, a single element, all elements the same
