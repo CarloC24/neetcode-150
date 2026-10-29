@@ -51,6 +51,7 @@ Every problem has its own folder with:
 | 2678 | [Number of Senior Citizens](number-of-senior-citizens/) | Easy | Fixed-position digits | O(n) | O(1) |
 | 169 | [Majority Element](majority-element/) | Easy | Boyer-Moore voting | O(n) | O(1) |
 | 724 | [Find Pivot Index](find-pivot-index/) | Easy | Running prefix sum | O(n) | O(1) |
+| 1758 | [Minimum Changes To Make Alternating Binary String](minimum-changes-to-make-alternating-binary-string/) | Easy | Count one pattern, complement the other | O(n) | O(1) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 

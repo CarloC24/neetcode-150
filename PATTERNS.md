@@ -297,6 +297,7 @@ return n <= 0
 
 **Common bugs:**
 - Using greedy without checking that it's safe. It often isn't (coin change with arbitrary coins), and then the problem needs DP.
+- Fixing local conflicts as you scan when the answer is one of a few fixed targets. In [Minimum Changes To Make Alternating Binary String](minimum-changes-to-make-alternating-binary-string/), flipping each clash left to right turns `"00101"` into `"01010"` (4 flips), when flipping `s[0]` gives `"10101"` (1 flip). If the valid answers can be listed, count the cost of each one instead.
 - Python's `//` rounds down, not toward zero: `(0 - 1) // 2` is `-1`, while Java's `(0 - 1) / 2` is `0`. Formulas that count capacity can go negative at the edges.
 
 **Next up:** the Greedy category in the plan (Maximum Subarray, Jump Game).
