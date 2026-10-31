@@ -337,6 +337,29 @@ return -1
 
 ---
 
+## 9. Simulation: find out what actually decides the answer
+
+**Solved:** [Time Needed to Buy Tickets](time-needed-to-buy-tickets/), [Number of Students Unable to Eat Lunch](number-of-students-unable-to-eat-lunch/) (extra practice)
+
+**When to use it:** the problem describes a process step by step (a queue rotating, people taking turns) and asks for the outcome. Simulating it is a correct first answer. Then ask which details the outcome really depends on. Often the order or the timing drops out, and a count or a formula is all that's left.
+
+```python
+cnt = [0, 0]                         # the queue only matters through these counts
+for s in students:
+    cnt[s] += 1
+for i, sandwich in enumerate(sandwiches):
+    if cnt[sandwich] == 0:           # the stack's order does matter: nobody skips the top
+        return len(sandwiches) - i
+    cnt[sandwich] -= 1
+return 0
+```
+
+**Common bugs:**
+- A simulation with no stopping rule for "stuck". Rotating a queue of `k` people `k` times without progress means nothing will change.
+- A circular-index simulation that marks finished people in the caller's array. It's faster, but a second call sees a different input.
+
+---
+
 ## Before you submit
 
 - [ ] Empty input, a single element, all elements the same
