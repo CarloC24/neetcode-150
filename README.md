@@ -53,6 +53,7 @@ Every problem has its own folder with:
 | 724 | [Find Pivot Index](find-pivot-index/) | Easy | Running prefix sum | O(n) | O(1) |
 | 1758 | [Minimum Changes To Make Alternating Binary String](minimum-changes-to-make-alternating-binary-string/) | Easy | Count one pattern, complement the other | O(n) | O(1) |
 | 1700 | [Number of Students Unable to Eat Lunch](number-of-students-unable-to-eat-lunch/) | Easy | Count preferences | O(n) | O(1) |
+| 75 | [Sort Colors](sort-colors/) | Medium | Dutch national flag | O(n) | O(1) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 

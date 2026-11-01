@@ -76,7 +76,7 @@ return res                          # only correct if a majority is guaranteed
 
 ## 2. Two pointers: close in from both ends
 
-**Solved:** [Valid Palindrome](valid-palindrome/), [Is Subsequence](is-subsequence/) (extra practice)
+**Solved:** [Valid Palindrome](valid-palindrome/), [Is Subsequence](is-subsequence/), [Sort Colors](sort-colors/) (extra practice)
 
 **When to use it:** the input is sorted, or you're comparing symmetric positions (palindromes, reversing in place). Each step lets you rule out one end of the range.
 
@@ -107,6 +107,23 @@ for c in t:                      # j is implicit: walk t once
         i += 1                   # earliest match is always safe
 return i == len(s)
 ```
+
+**Three-way partition** ([Sort Colors](sort-colors/)): split an array into "less than", "equal to" and "greater than" in one pass. `[0, l)` holds the low values, `[l, i)` the middle ones, `[i, r]` is unread and `(r, n)` holds the high ones.
+
+```python
+l, i, r = 0, 0, len(nums) - 1
+while i <= r:                    # <=: index r is still unread
+    if nums[i] == 0:
+        nums[l], nums[i] = nums[i], nums[l]
+        l, i = l + 1, i + 1      # what came back from l was already checked
+    elif nums[i] == 2:
+        nums[i], nums[r] = nums[r], nums[i]
+        r -= 1                   # i stays: what came back from r is unread
+    else:
+        i += 1
+```
+
+Getting either comment wrong breaks it: `while i < r` leaves `[1, 0]` unsorted, and moving `i` after the swap with `r` turns `[1, 2, 0]` into `[1, 0, 2]`.
 
 **Next up:** Two Sum II and 3Sum. 3Sum is "sort, then run two pointers for each element."
 
