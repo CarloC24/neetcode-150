@@ -16,7 +16,7 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 
 | Category | Done | Total |
 |---|---|---|
-| Arrays & Hashing | 3 | 9 |
+| Arrays & Hashing | 4 | 9 |
 | Two Pointers | 1 | 5 |
 | Sliding Window | 1 | 6 |
 | Stack | 1 | 7 |
@@ -34,7 +34,7 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 | Intervals | 0 | 6 |
 | Math & Geometry | 0 | 8 |
 | Bit Manipulation | 0 | 7 |
-| **Total** | **9** | **150** |
+| **Total** | **10** | **150** |
 
 Extra practice already done (not in the NeetCode 150): Length of Last Word, Score of a String, Time Needed to Buy Tickets, Is Subsequence, Isomorphic Strings, Can Place Flowers, Next Greater Element I, Longest Strictly Increasing or Strictly Decreasing Subarray, Find All Numbers Disappeared in an Array, Monotonic Array, Divide Array Into Equal Pairs, Number of Senior Citizens, Majority Element, Find Pivot Index, Minimum Changes To Make Alternating Binary String, Number of Students Unable to Eat Lunch, Sort Colors.
 
@@ -51,7 +51,7 @@ Easy categories get shorter sessions. Harder ones get longer sessions, since a s
 
 | Phase | Category | Left (E / M / H) | Est. total | Minutes / day | ≈ Days |
 |---|---|---|---|---|---|
-| 1–2 | Arrays & Hashing | 0 / 6 / 0 | 5h 00m | 45 | 7 |
+| 1–2 | Arrays & Hashing | 0 / 5 / 0 | 4h 10m | 45 | 6 |
 | 2 | Two Pointers | 0 / 3 / 1 | 3h 50m | 45 | 6 |
 | 2 | Sliding Window | 0 / 3 / 2 | 5h 10m | 45 | 7 |
 | 2 | Stack | 0 / 5 / 1 | 5h 30m | 45 | 8 |
@@ -69,7 +69,7 @@ Easy categories get shorter sessions. Harder ones get longer sessions, since a s
 | 6 | Intervals | 1 / 4 / 1 | 5h 10m | 60 | 6 |
 | 6 | Math & Geometry | 2 / 6 / 0 | 6h 00m | 45 | 8 |
 | 6 | Bit Manipulation | 5 / 2 / 0 | 4h 10m | 45 | 6 |
-| | **Total** | **19 / 101 / 21** | **~122h** | | **~134 days** |
+| | **Total** | **19 / 100 / 21** | **~121h** | | **~133 days** |
 
 **Add 10–15 minutes of review every day** on top of the category time. Re-solve one problem you've already finished, from a blank file and without looking at your old solution. Pick one from an earlier category, so the old patterns stay fresh while you learn new ones.
 
@@ -77,7 +77,7 @@ Easy categories get shorter sessions. Harder ones get longer sessions, since a s
 - Phase 2 day, about 1 hour: 45 min on new problems, then 15 min of review.
 - Graphs or DP day, about 1h 30m to 1h 45m: 75–90 min on new problems, then 15 min of review.
 
-**Pace:** at 6 days a week, the remaining 141 problems take about **22–23 weeks**. If you can only do 4 days a week, plan on about 8 months.
+**Pace:** at 6 days a week, the remaining 140 problems take about **22–23 weeks**. If you can only do 4 days a week, plan on about 8 months.
 
 **Adjusting as you go:**
 - If a problem runs well past its estimate, stop at the daily time limit and pick it back up tomorrow. Don't turn one day into three hours.
@@ -109,7 +109,7 @@ These build directly on problems you've already solved. Each one also appears in
 - [x] Two Sum (E)
 - [ ] Group Anagrams (M)
 - [ ] Top K Frequent Elements (M)
-- [ ] Encode and Decode Strings (M)
+- [x] Encode and Decode Strings (M)
 - [ ] Product of Array Except Self (M)
 - [ ] Valid Sudoku (M)
 - [ ] Longest Consecutive Sequence (M)

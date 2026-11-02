@@ -26,6 +26,7 @@ Every problem has its own folder with:
 | 217 | [Contains Duplicate](contains-duplicate-array/) | Arrays & Hashing | Easy | Hash set | O(n) | O(n) |
 | 242 | [Valid Anagram](valid-anagram/) | Arrays & Hashing | Easy | 26-slot count array | O(n) | O(1) |
 | 1 | [Two Sum](two-sum/) | Arrays & Hashing | Easy | Hash map, one pass | O(n) | O(n) |
+| 271 | [Encode and Decode Strings](encode-and-decode-strings/) | Arrays & Hashing | Medium | Length prefix per string | O(m+n) | O(m+n) |
 | 125 | [Valid Palindrome](valid-palindrome/) | Two Pointers | Easy | Two pointers | O(n) | O(1) |
 | 121 | [Best Time to Buy and Sell Stock](best-time-to-buy-and-sell-stock/) | Sliding Window | Easy | One pass, track the minimum | O(n) | O(1) |
 | 20 | [Valid Parentheses](valid-parentheses/) | Stack | Easy | Stack | O(n) | O(n) |

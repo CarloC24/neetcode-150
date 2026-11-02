@@ -377,6 +377,37 @@ return 0
 
 ---
 
+## 10. Serialization: carry the boundaries, don't guess them
+
+**Solved:** [Encode and Decode Strings](encode-and-decode-strings/)
+
+**When to use it:** you have to pack several values into one string (or byte stream) and get them back exactly. If the values can contain any character, no separator is safe on its own: `"#".join(["a#b"])` and `"#".join(["a", "b"])` are both `"a#b"`. Write each value's length in front of it instead.
+
+```python
+def encode(strs):
+    return "".join(f"{len(s)}#{s}" for s in strs)
+
+def decode(s):
+    res, i = [], 0
+    while i < len(s):
+        j = s.index("#", i)          # lengths are digits, so this '#' is the delimiter
+        length = int(s[i:j])
+        res.append(s[j + 1 : j + 1 + length])
+        i = j + 1 + length           # jump over the value: never search inside it
+    return res
+```
+
+**Escaping variant:** keep a separator, but make it impossible inside a value. Double every `#`, and end each value with `#!`. It works, but the decoder has to read every character.
+
+**Common bugs:**
+- Splitting the encoding on the delimiter. `["#"]` encodes to `1##`, and `"1##".split("#")` is `["1", "", ""]`.
+- Reading a one-digit length. Lengths can be 10 or more; read up to the delimiter.
+- Encoding `[]` and `[""]` the same way. Check both in your tests.
+
+**Next up:** Serialize and Deserialize Binary Tree (Trees), the same problem for a tree.
+
+---
+
 ## Before you submit
 
 - [ ] Empty input, a single element, all elements the same
