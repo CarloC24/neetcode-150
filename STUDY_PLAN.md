@@ -12,6 +12,7 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 - For videos to listen to alongside this plan, see [VIDEOS.md](VIDEOS.md).
 - For a quick review of each pattern, with code templates and common bugs, see [PATTERNS.md](PATTERNS.md).
 
+
 ## Progress
 
 | Category | Done | Total |
