@@ -55,6 +55,7 @@ Every problem has its own folder with:
 | 1758 | [Minimum Changes To Make Alternating Binary String](minimum-changes-to-make-alternating-binary-string/) | Easy | Count one pattern, complement the other | O(n) | O(1) |
 | 1700 | [Number of Students Unable to Eat Lunch](number-of-students-unable-to-eat-lunch/) | Easy | Count preferences | O(n) | O(1) |
 | 75 | [Sort Colors](sort-colors/) | Medium | Dutch national flag | O(n) | O(1) |
+| 912 | [Sort an Array](sort-an-array/) | Medium | Heap sort (also quick, merge, counting, radix, shell) | O(n log n) | O(1) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 

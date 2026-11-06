@@ -408,6 +408,51 @@ def decode(s):
 
 ---
 
+## 11. Sorting: know the trade-offs, write one from scratch
+
+**Solved:** [Sort an Array](sort-an-array/) (extra practice)
+
+**When to use it:** an interviewer asks you to implement a sort, or a problem needs one with a property the library doesn't promise: O(1) extra space, stability, or linear time on small integers.
+
+| Sort | Time | Extra space | Stable |
+|---|---|---|---|
+| Quick | O(n log n) avg, O(n²) worst | O(log n) | No |
+| Merge | O(n log n) | O(n) | Yes |
+| Heap | O(n log n) | O(1) | No |
+| Counting | O(n + k), k = value range | O(k) | — |
+
+Merge sort is the one to write from memory; the merge is the same as Merge Two Sorted Lists.
+
+```python
+def merge_sort(nums, lo, hi):
+    if lo >= hi:
+        return
+    mid = (lo + hi) // 2
+    merge_sort(nums, lo, mid)
+    merge_sort(nums, mid + 1, hi)
+    left, right = nums[lo : mid + 1], nums[mid + 1 : hi + 1]
+    i, j, k = lo, 0, 0
+    while j < len(left) or k < len(right):
+        if k == len(right) or (j < len(left) and left[j] <= right[k]):  # <=: stable
+            nums[i] = left[j]
+            j += 1
+        else:
+            nums[i] = right[k]
+            k += 1
+        i += 1
+```
+
+**Common bugs:**
+- Quick sort with the first or last element as pivot: O(n²) on sorted input. Use median-of-three or a random pivot.
+- Quick sort scans that skip values equal to the pivot: O(n²) when every value is the same. Stop on equal values.
+- Recursing into both sides of a bad quick sort split: n stack frames. Recurse into the smaller side, loop on the larger.
+- Radix sort on negative numbers. Sort the negatives' absolute values separately, then reverse and negate them.
+- Heap sort building the heap from the root down. Sift down from the last parent, `n // 2 - 1`, back to 0.
+
+**Next up:** Kth Largest Element in an Array (Heap), where quickselect is quick sort that recurses into one side only.
+
+---
+
 ## Before you submit
 
 - [ ] Empty input, a single element, all elements the same
