@@ -37,7 +37,7 @@ A roadmap through all 150 NeetCode problems. Check a box off (`[x]`) when both t
 | Bit Manipulation | 0 | 7 |
 | **Total** | **11** | **150** |
 
-Extra practice already done (not in the NeetCode 150): Length of Last Word, Score of a String, Time Needed to Buy Tickets, Is Subsequence, Isomorphic Strings, Can Place Flowers, Next Greater Element I, Longest Strictly Increasing or Strictly Decreasing Subarray, Find All Numbers Disappeared in an Array, Monotonic Array, Divide Array Into Equal Pairs, Number of Senior Citizens, Majority Element, Find Pivot Index, Minimum Changes To Make Alternating Binary String, Number of Students Unable to Eat Lunch, Sort Colors, Sort an Array.
+Extra practice already done (not in the NeetCode 150): Length of Last Word, Score of a String, Time Needed to Buy Tickets, Is Subsequence, Isomorphic Strings, Can Place Flowers, Next Greater Element I, Longest Strictly Increasing or Strictly Decreasing Subarray, Find All Numbers Disappeared in an Array, Monotonic Array, Divide Array Into Equal Pairs, Number of Senior Citizens, Majority Element, Find Pivot Index, Minimum Changes To Make Alternating Binary String, Number of Students Unable to Eat Lunch, Sort Colors, Sort an Array, Encode and Decode TinyURL.
 
 ## Daily Time Budget
 

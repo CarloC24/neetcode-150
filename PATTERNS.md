@@ -28,7 +28,7 @@ The input size tells you roughly how fast the solution has to be. A judge handle
 
 ## 1. Hash set / hash map: "have I seen this before?"
 
-**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/), [Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/), [Divide Array Into Equal Pairs](divide-array-into-equal-pairs/), [Majority Element](majority-element/) (extra practice)
+**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/), [Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/), [Divide Array Into Equal Pairs](divide-array-into-equal-pairs/), [Majority Element](majority-element/), [Encode and Decode TinyURL](encode-and-decode-tinyurl/) (extra practice)
 
 **When to use it:** you need to check for duplicates, find a pair that adds up to a target, count things, or match two collections against each other. It trades O(n) memory for O(1) lookups, which turns an O(n²) nested loop into O(n).
 
@@ -63,6 +63,17 @@ return res                          # only correct if a majority is guaranteed
 ```
 
 **Bijection variant** ([Isomorphic Strings](isomorphic-strings/)): to check that two sequences map one-to-one, check **both** directions. A single `s -> t` map accepts `"ab" -> "aa"`. For ASCII, two `[0] * 128` arrays of "last seen at position + 1" do both checks in one comparison.
+
+**Two-way map variant** ([Encode and Decode TinyURL](encode-and-decode-tinyurl/)): to hand out a key for each value and look it up either way, keep a map in each direction. The forward map catches repeats, so a value seen before gets its old key back.
+
+```python
+def encode(self, long_url):
+    if long_url not in self.encode_map:              # a repeat reuses its key
+        short_url = BASE + str(len(self.encode_map) + 1)
+        self.encode_map[long_url] = short_url
+        self.decode_map[short_url] = long_url
+    return self.encode_map[long_url]
+```
 
 **Common bugs:**
 - Inserting before looking up, so an element pairs with itself (in Two Sum, `[3]` with target 6).
