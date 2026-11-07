@@ -323,7 +323,7 @@ return n <= 0
 
 ## 8. Prefix sums: range sums in O(1)
 
-**Solved:** [Find Pivot Index](find-pivot-index/) (extra practice)
+**Solved:** [Product of Array Except Self](product-of-array-except-self/), [Find Pivot Index](find-pivot-index/) (extra practice)
 
 **When to use it:** you need the sum of a range, or of everything before or after an index, many times over. Precompute running totals once, and any range sum becomes a subtraction instead of a loop.
 
@@ -345,12 +345,26 @@ for i, x in enumerate(nums):
 return -1
 ```
 
+**Products, no division** ([Product of Array Except Self](product-of-array-except-self/)): "everything except `nums[i]`" is the prefix before `i` times the suffix after it. Products can't be undone by subtraction, and division breaks on zeros, so build both sides instead. Write the prefixes into the output, then fold in a running suffix from the right.
+
+```python
+res, prefix = [1] * len(nums), 1
+for i in range(len(nums)):
+    res[i] = prefix                  # use first...
+    prefix *= nums[i]                # ...then fold nums[i] in
+suffix = 1
+for i in range(len(nums) - 1, -1, -1):
+    res[i] *= suffix
+    suffix *= nums[i]
+```
+
 **Common bugs:**
 - Adding `nums[i]` to the running sum before using it, which puts an element on its own left side.
 - Dropping the leading 0 from the prefix array, so index 0 needs a special case and every range is off by one.
 - Stopping early because one side "has passed" the other. With negative values, neither sum is monotone.
+- Dividing a total product by `nums[i]`. A single zero makes the total 0; count zeros and multiply only the non-zero values, or avoid division altogether.
 
-**Next up:** Product of Array Except Self in the plan, the same left/right idea with products instead of sums.
+**Next up:** Subarray Sum Equals K (not in the 150), prefix sums with a hash map of the sums seen so far. In the plan, Trapping Rain Water uses the same left/right split with running maxima.
 
 ---
 
