@@ -58,6 +58,7 @@ Every problem has its own folder with:
 | 75 | [Sort Colors](sort-colors/) | Medium | Dutch national flag | O(n) | O(1) |
 | 912 | [Sort an Array](sort-an-array/) | Medium | Heap sort (also quick, merge, counting, radix, shell) | O(n log n) | O(1) |
 | 535 | [Encode and Decode TinyURL](encode-and-decode-tinyurl/) | Medium | Two hash maps, long ↔ short | O(1) per call | O(n·m) |
+| 554 | [Brick Wall](brick-wall/) | Medium | Count edge positions in a hash map | O(N) | O(N) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 

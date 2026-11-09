@@ -334,7 +334,7 @@ return n <= 0
 
 ## 8. Prefix sums: range sums in O(1)
 
-**Solved:** [Product of Array Except Self](product-of-array-except-self/), [Find Pivot Index](find-pivot-index/) (extra practice)
+**Solved:** [Product of Array Except Self](product-of-array-except-self/), [Find Pivot Index](find-pivot-index/), [Brick Wall](brick-wall/) (extra practice)
 
 **When to use it:** you need the sum of a range, or of everything before or after an index, many times over. Precompute running totals once, and any range sum becomes a subtraction instead of a loop.
 
@@ -369,10 +369,23 @@ for i in range(len(nums) - 1, -1, -1):
     suffix *= nums[i]
 ```
 
+**Counting variant** ([Brick Wall](brick-wall/)): a row's running widths are where its edges are. Count each running total in a hash map, and the most common one is where the most rows line up. Only positions that actually occur can be the answer, so you never loop over the width itself.
+
+```python
+count = defaultdict(int)
+for row in wall:
+    pos = 0
+    for brick in row[:-1]:           # the last edge is the wall's: skip it
+        pos += brick
+        count[pos] += 1
+return len(wall) - max(count.values(), default=0)
+```
+
 **Common bugs:**
 - Adding `nums[i]` to the running sum before using it, which puts an element on its own left side.
 - Dropping the leading 0 from the prefix array, so index 0 needs a special case and every range is off by one.
 - Stopping early because one side "has passed" the other. With negative values, neither sum is monotone.
+- Running sums of large values in a Java `int`. Brick Wall's widths reach 2^31 - 1 each; keep the sums in a `long`.
 - Dividing a total product by `nums[i]`. A single zero makes the total 0; count zeros and multiply only the non-zero values, or avoid division altogether.
 
 **Next up:** Subarray Sum Equals K (not in the 150), prefix sums with a hash map of the sums seen so far. In the plan, Trapping Rain Water uses the same left/right split with running maxima.
