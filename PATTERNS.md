@@ -28,7 +28,7 @@ The input size tells you roughly how fast the solution has to be. A judge handle
 
 ## 1. Hash set / hash map: "have I seen this before?"
 
-**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/), [Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/), [Divide Array Into Equal Pairs](divide-array-into-equal-pairs/), [Majority Element](majority-element/), [Encode and Decode TinyURL](encode-and-decode-tinyurl/) (extra practice)
+**Solved:** [Contains Duplicate](contains-duplicate-array/), [Two Sum](two-sum/), [Valid Anagram](valid-anagram/), [Isomorphic Strings](isomorphic-strings/), [Find All Numbers Disappeared in an Array](find-all-numbers-disappeared-in-an-array/), [Divide Array Into Equal Pairs](divide-array-into-equal-pairs/), [Majority Element](majority-element/), [Majority Element II](majority-element-ii/), [Encode and Decode TinyURL](encode-and-decode-tinyurl/) (extra practice)
 
 **When to use it:** you need to check for duplicates, find a pair that adds up to a target, count things, or match two collections against each other. It trades O(n) memory for O(1) lookups, which turns an O(n²) nested loop into O(n).
 
@@ -62,6 +62,19 @@ for x in nums:
 return res                          # only correct if a majority is guaranteed
 ```
 
+**More than `n / 3`** ([Majority Element II](majority-element-ii/)): at most two values can qualify, so keep two candidates. Check both candidates *before* looking for an empty slot, cancel one vote from each when neither matches, then count both candidates again: a leftover candidate isn't necessarily an answer. For `n / k`, keep `k - 1` candidates.
+
+```python
+num1 = num2 = -1; cnt1 = cnt2 = 0
+for x in nums:
+    if x == num1:   cnt1 += 1
+    elif x == num2: cnt2 += 1
+    elif cnt1 == 0: num1, cnt1 = x, 1
+    elif cnt2 == 0: num2, cnt2 = x, 1
+    else:           cnt1 -= 1; cnt2 -= 1     # cancels three different values
+return [c for c in {num1, num2} if nums.count(c) > len(nums) // 3]   # second pass
+```
+
 **Bijection variant** ([Isomorphic Strings](isomorphic-strings/)): to check that two sequences map one-to-one, check **both** directions. A single `s -> t` map accepts `"ab" -> "aa"`. For ASCII, two `[0] * 128` arrays of "last seen at position + 1" do both checks in one comparison.
 
 **Two-way map variant** ([Encode and Decode TinyURL](encode-and-decode-tinyurl/)): to hand out a key for each value and look it up either way, keep a map in each direction. The forward map catches repeats, so a value seen before gets its old key back.
@@ -81,6 +94,7 @@ def encode(self, long_url):
 - Using "XOR everything and check for 0" to test that every count is even. Unrelated values can cancel: `1 ^ 2 ^ 4 ^ 7 == 0`. XOR only works when the counts are already known, as in Single Number.
 - In Python, swapping with `nums[i], nums[nums[i] - 1] = ...`. The targets are assigned left to right, so the second index is computed from the new `nums[i]`. Save `j = nums[i] - 1` first.
 - Trusting Boyer-Moore without the majority guarantee. `[1, 2, 3]` returns `3`. If the problem doesn't promise a majority, count the candidate in a second pass.
+- Two-candidate voting that looks for an empty slot first. `[1, 1]` puts 1 in both slots, and `[1, 1, 2, 2, 2]` loses the 1.
 - Forgetting the quick length check when comparing two strings.
 
 ---
