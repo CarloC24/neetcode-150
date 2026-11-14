@@ -348,7 +348,7 @@ return n <= 0
 
 ## 8. Prefix sums: range sums in O(1)
 
-**Solved:** [Product of Array Except Self](product-of-array-except-self/), [Find Pivot Index](find-pivot-index/), [Brick Wall](brick-wall/) (extra practice)
+**Solved:** [Product of Array Except Self](product-of-array-except-self/), [Find Pivot Index](find-pivot-index/), [Brick Wall](brick-wall/), [Subarray Sum Equals K](subarray-sum-equals-k/) (extra practice)
 
 **When to use it:** you need the sum of a range, or of everything before or after an index, many times over. Precompute running totals once, and any range sum becomes a subtraction instead of a loop.
 
@@ -383,6 +383,17 @@ for i in range(len(nums) - 1, -1, -1):
     suffix *= nums[i]
 ```
 
+**Prefix sums + hash map** ([Subarray Sum Equals K](subarray-sum-equals-k/)): to count subarrays with sum `k`, count earlier prefix sums equal to `prefix - k`. This works with negative values, where a sliding window doesn't.
+
+```python
+res = prefix = 0
+seen = {0: 1}                        # the empty prefix
+for x in nums:
+    prefix += x
+    res += seen.get(prefix - k, 0)   # look up first...
+    seen[prefix] = seen.get(prefix, 0) + 1   # ...then record
+```
+
 **Counting variant** ([Brick Wall](brick-wall/)): a row's running widths are where its edges are. Count each running total in a hash map, and the most common one is where the most rows line up. Only positions that actually occur can be the answer, so you never loop over the width itself.
 
 ```python
@@ -399,10 +410,11 @@ return len(wall) - max(count.values(), default=0)
 - Adding `nums[i]` to the running sum before using it, which puts an element on its own left side.
 - Dropping the leading 0 from the prefix array, so index 0 needs a special case and every range is off by one.
 - Stopping early because one side "has passed" the other. With negative values, neither sum is monotone.
+- Starting the prefix map empty instead of `{0: 1}`, so subarrays that start at index 0 are missed. Or recording `prefix` before looking up `prefix - k`, so with `k = 0` each point matches itself.
 - Running sums of large values in a Java `int`. Brick Wall's widths reach 2^31 - 1 each; keep the sums in a `long`.
 - Dividing a total product by `nums[i]`. A single zero makes the total 0; count zeros and multiply only the non-zero values, or avoid division altogether.
 
-**Next up:** Subarray Sum Equals K (not in the 150), prefix sums with a hash map of the sums seen so far. In the plan, Trapping Rain Water uses the same left/right split with running maxima.
+**Next up:** Continuous Subarray Sum (not in the 150), the same map keyed by `prefix % k`. In the plan, Trapping Rain Water uses the same left/right split with running maxima.
 
 ---
 

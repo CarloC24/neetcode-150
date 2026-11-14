@@ -60,6 +60,7 @@ Every problem has its own folder with:
 | 535 | [Encode and Decode TinyURL](encode-and-decode-tinyurl/) | Medium | Two hash maps, long ↔ short | O(1) per call | O(n·m) |
 | 554 | [Brick Wall](brick-wall/) | Medium | Count edge positions in a hash map | O(N) | O(N) |
 | 229 | [Majority Element II](majority-element-ii/) | Medium | Boyer-Moore voting, two candidates | O(n) | O(1) |
+| 560 | [Subarray Sum Equals K](subarray-sum-equals-k/) | Medium | Prefix sums + hash map of counts | O(n) | O(n) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 
