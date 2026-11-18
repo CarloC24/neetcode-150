@@ -13,6 +13,7 @@ Every problem has its own folder with:
 
 | File | What it's for |
 |---|---|
+| [ROADMAP.md](ROADMAP.md) | Day-by-day schedule through the remaining NeetCode 250 problems (the 150 marked ★), with a daily review problem |
 | [STUDY_PLAN.md](STUDY_PLAN.md) | All 150 problems in study order, with a progress checklist and a daily time budget per category |
 | [PATTERNS.md](PATTERNS.md) | Cheat sheet of the patterns solved so far: when to use each one, a code template, and the common bugs |
 | [VIDEOS.md](VIDEOS.md) | YouTube courses and walkthroughs to listen to alongside the plan |
