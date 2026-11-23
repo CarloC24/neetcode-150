@@ -39,7 +39,7 @@ The problem list comes from [neetcode.io/solutions](https://neetcode.io/solution
 
 | Day | Date | Category | New problems | Est. | Review | Done |
 |---|---|---|---|---|---|---|
-| 1 | Wed Nov 18 | Arrays & Hashing | [Concatenation of Array](https://neetcode.io/solutions/concatenation-of-array) (E) + [Longest Common Prefix](https://neetcode.io/solutions/longest-common-prefix) (E) | 60m | Contains Duplicate | |
+| 1 | Wed Nov 18 | Arrays & Hashing | [Concatenation of Array](https://neetcode.io/solutions/concatenation-of-array) (E) + [Longest Common Prefix](https://neetcode.io/solutions/longest-common-prefix) (E) | 60m | Contains Duplicate | ✅ |
 | 2 | Thu Nov 19 | ″ | [Remove Element](https://neetcode.io/solutions/remove-element) (E) + [Design HashSet](https://neetcode.io/solutions/design-hashset) (E) | 60m | Valid Anagram | |
 | 3 | Fri Nov 20 | ″ | [Design HashMap](https://neetcode.io/solutions/design-hashmap) (E) + ★ [Group Anagrams](https://neetcode.io/solutions/group-anagrams) (M) | 80m | Two Sum | |
 | 4 | Sat Nov 21 | ″ | ★ [Top K Frequent Elements](https://neetcode.io/solutions/top-k-frequent-elements) (M) | 50m | Majority Element | |
