@@ -64,6 +64,7 @@ Every problem has its own folder with:
 | 560 | [Subarray Sum Equals K](subarray-sum-equals-k/) | Medium | Prefix sums + hash map of counts | O(n) | O(n) |
 | 1929 | [Concatenation of Array](concatenation-of-array/) | Easy | Preallocate 2n, fill both halves by index | O(n) | O(n) |
 | 14 | [Longest Common Prefix](longest-common-prefix/) | Easy | Vertical scan, stop at first mismatch | O(n·m) | O(1) |
+| 27 | [Remove Element](remove-element/) | Easy | Two pointers, read and write | O(n) | O(1) |
 
 [hello-world/](hello-world/) checks that your Python and Java toolchains work. Run it first on a new machine.
 
